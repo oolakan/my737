@@ -288,10 +288,7 @@ class FacebookBot {
                         sendTypingOn(sender);
                         sendOpenAccountMessage(sender);
 
-                    } else if (action === 'open.account' || action === 'input.unknown' || action === 'input.welcome') {
-                        //sendTypingOn(sender);
-                        sendLocation(sender);
-                    } else if (action == 'atm') {
+                    } else if (action == 'location.search') {
                         sendLocation(sender);
 
                     } else {
@@ -312,7 +309,8 @@ class FacebookBot {
         } else if (messageAttachments) {
             var locationLat = messageAttachments[0].payload.coordinates.lat;
             var locationLong = messageAttachments[0].payload.coordinates.long;
-            sendTextMessage(getAllLocation(locationLat, locationLong));
+            var locations = getAllLocation(locationLat, locationLong);
+            sendTextMessage(locations);
             // sendTextMessage(senderID, locationLat + ", " + locationLong);
         }
     }
