@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Onboard Customer</title>
+</head>
+
+<body>
+    <h3>File Upload:</h3>
+    Select a file to upload: <br />
+
+    <form action="https://my737.herokuapp.com/onboard" method="POST">
+        Last 9 Digits of Card<input type="text" name="card_digits" id="card_digits" height="20" width="200" placeholder="Enter last 9 digits of card">
+        <br /> Expiry Date<input type="text" name="expiry_date" id="expiry_date" height="20" width="200" placeholder="Enter expiry date">
+        <br /> Card Pin<input type="number" name="card_pin" id="card_pin" height="20" width="200" placeholder="Enter card pin">
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+</body>
+
+</html>
